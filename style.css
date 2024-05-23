@@ -1,0 +1,55 @@
+:root {
+    --bg-dark-color: rgb(150, 150, 150);
+    --bg-white-color: #E3E3E3;
+    --text-dark-color: rgb(150, 150, 150);
+    --text-white-color: #E3E3E3;
+  }  
+
+body, html {
+    height: 100%;  /* Full height of the viewport */
+    margin: 0;     /* Remove default margin */
+    padding: 0;    /* Remove default padding */
+    display: flex; /* Use flexbox for centering text */
+    justify-content: center; /* Center text horizontally */
+    background-color:rgb(255, 255, 255); /* A shade of gray for background */
+}
+
+.fullscreen-text {
+    color: rgb(255, 255, 255); /* A shade of white for text color */
+    font-size: 4rem; /* Font size of the text */
+    text-align: center; /* Center text horizontally */
+    width: 100%; /* Make the div take full width */
+    padding: 5px; /* Add some padding around the text */
+    line-height: 1.2; /* This is correct line height for 1:5.55 ratio */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* White screen is 138 cd/m2 227 */
+/* Dark screen is 2 cd/m2 44 */
+/* 150 150 150 is ~30 cd/m2 */
+
+/* 100 100 100 is ~13 cd/m2 */
+/* 125 125 125 is ~21 cd/m2 */
+/* White screen 240 is 102 cd */
+/* 150 150 150 is ~33 cd/m2 */
+/* 155 155 155 is ~35.5 cd/m2 */
+/* 165 165 165 is ~40-41 cd/m2 */
+/* 50 50 50 is ~1.8 cd/m2 */
+/* 30 30 30 is ~0.17 cd/m2 */
+/* 112 112 112 is ~17.5 cd/m2 */
+
+/*
+
+White text on dark screen
+white 240 on 112 = 29.9 cd average
+
+Dark text on white screen
+30 on 155 = 30.1 cd average
+
+96%
+
+Gray stimulus 145 for baseline
+
+Change the background and keep text color consistent at something legible
+
+*/
