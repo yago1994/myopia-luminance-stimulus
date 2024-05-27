@@ -3,6 +3,8 @@
     --bg-white-color: rgb(156, 156, 156);
     --text-dark-color: rgb(31, 31, 31);
     --text-white-color: rgb(245, 245, 245);
+
+    --baseline-color: rgb(146, 146, 146);
 }  
 
 body, html {
@@ -12,8 +14,8 @@ body, html {
     display: flex;
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center items horizontally */
-    background-color: var(--bg-white-color);
-    color: var(--text-dark-color);
+    /* background-color: var(--bg-dark-color); */
+    /* color: var(--text-dark-color); */
 }
 
 .content {
@@ -24,8 +26,9 @@ body, html {
 }
 
 .fullscreen-text {
+    background-color: var(--bg-dark-color);
     color: var(--text-white-color);
-    font-size: 5.88rem;
+    font-size: 4.0rem; /* 5.88rem; */
     text-align: center;
     width: 100%;
     padding: 5px;
@@ -87,7 +90,7 @@ body, html {
 /*
 
 White text on dark screen
-white 240 on 112 = 29.9 cd average
+white 245 on 112 = 29.9 cd average
 
 Dark text on white screen
 31 on 155 = 30.1 cd average

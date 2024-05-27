@@ -9,6 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const textPixels = 408617;
     const bgPixels = 2272679;
 
+    let isDarkMode = false;
+    let isBaseline = false;
+
+    let savedBgColor, savedTextColor;
+
     function hslToRgb(h, s, l) {
         l /= 100;
         const a = s * Math.min(l, 1 - l) / 100;
@@ -56,11 +61,49 @@ document.addEventListener('DOMContentLoaded', function () {
         contrastRatioDisplay.textContent = `Contrast Ratio (RMS): ${rmsContrast.toFixed(2)}`;
     }
 
-    bgSlider.addEventListener('input', updateColors);
-    textSlider.addEventListener('input', updateColors);
+    // bgSlider.addEventListener('input', updateColors);
+    // textSlider.addEventListener('input', updateColors);
 
     // Initialize the colors based on slider values
-    updateColors();
-});
+    // updateColors();
 
+    function toggleDarkMode() {
+        if (isDarkMode) {
+            document.querySelector('.fullscreen-text').style.backgroundColor = 'var(--bg-dark-color)';
+            document.querySelector('.fullscreen-text').style.color = 'var(--text-white-color)';
+        } else {
+            document.querySelector('.fullscreen-text').style.backgroundColor = 'var(--bg-white-color)';
+            document.querySelector('.fullscreen-text').style.color = 'var(--text-dark-color)';
+        }
+        isDarkMode = !isDarkMode;
+    }
+
+    function toggleBaseline(){
+        if (isBaseline) {
+            // Revert to saved colors
+            document.querySelector('.fullscreen-text').style.backgroundColor = savedBgColor;
+            document.querySelector('.fullscreen-text').style.color = savedTextColor;
+        } else {
+            // Save current colors
+            savedBgColor =   document.querySelector('.fullscreen-text').style.backgroundColor;
+            savedTextColor = document.querySelector('.fullscreen-text').style.color;
+
+            document.querySelector('.fullscreen-text').style.backgroundColor = 'var(--baseline-color)';
+            document.querySelector('.fullscreen-text').style.color = 'var(--baseline-color)';
+        }
+        isBaseline = !isBaseline;
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'i') {
+            toggleDarkMode();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'b') {
+            toggleBaseline();
+        }
+    });
+});
 
