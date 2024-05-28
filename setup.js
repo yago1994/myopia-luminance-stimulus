@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updateFontSize() {
-        const fontSize = fontSizeSlider.value;
+        const fontSize = 30 + fontSizeSlider.value/10;
         fullscreenText.style.fontSize = `${fontSize}px`;
         fontSizeValueDisplay.textContent = `${fontSize}px`;
     }
