@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize the colors based on slider values
     updateColors();
     updateFontSize();
-    detectDeviceAndSetFontSize();
 
     function toggleDarkMode() {
         if (isDarkMode) {
@@ -104,22 +103,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const fontSize = 30 + fontSizeSlider.value/10;
         fullscreenText.style.fontSize = `${fontSize}px`;
         fontSizeValueDisplay.textContent = `${fontSize}px`;
-    }
-
-    function detectDeviceAndSetFontSize() {
-        const userAgent = navigator.userAgent;
-        console.log(userAgent);
-        // Detecting Vision Pro device
-        if (userAgent.includes('VisionPro')) {
-            // Assuming Vision Pro devices would have this user agent identifier
-            fullscreenText.style.fontSize = '34.5px'; // Larger font size for Vision Pro
-        } else {
-            fullscreenText.style.fontSize = '4.0rem'; // Default font size for computers
-        }
-
-        // Initialize the slider with the detected font size
-        fontSizeSlider.value = parseInt(fullscreenText.style.fontSize);
-        fontSizeValueDisplay.textContent = userAgent;
     }
 
     document.addEventListener('keydown', (e) => {
