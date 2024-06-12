@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'f') {
             toggleSearchField();
+            removeHighlights();
         } else if (e.key === 'Escape') {
             removeHighlights();
             searchContainer.classList.toggle('hidden');
