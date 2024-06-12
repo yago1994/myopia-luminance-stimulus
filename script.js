@@ -93,21 +93,14 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'f') {
             toggleSearchField();
-            removeHighlights();
         } else if (e.key === 'Escape') {
             removeHighlights();
             searchContainer.classList.toggle('hidden');
-        }
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'i') {
+        } else if (e.key === 'h') {
+            removeHighlights();
+        } else if (e.key === 'i') {
             toggleDarkMode();
-        }
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'b') {
+        } else if (e.key === 'b') {
             toggleBaseline();
         }
     });
