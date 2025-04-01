@@ -1,0 +1,139 @@
+:root {
+    --bg-dark-color: rgb(78, 78, 78);
+    --bg-white-color: rgb(78, 78, 78);
+    --text-dark-color: rgb(78, 78, 78);
+    --text-white-color: rgb(78, 78, 78);
+
+    --baseline-color: rgb(78, 78, 78);
+}  
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    /* background-color: var(--bg-dark-color); */
+    /* color: var(--text-dark-color); */
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fullscreen-text {
+    background-color: var(--bg-dark-color);
+    color: var(--text-white-color);
+    font-size: 64px; /* 4.0rem; /* 5.88rem; */
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+    line-height: 1.2;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%; /* Ensure sliders are within the viewport */
+    max-width: 500px; /* Limit the width of the slider container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black; /* Solid black background */
+    padding: 20px; /* Add padding for better appearance */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add a shadow for better visibility */
+}
+
+.slider-container label {
+    margin-top: 10px;
+    color: white; /* White text for better contrast */
+}
+
+.slider-container input[type="range"] {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.slider-container span {
+    color: white; /* White text for better contrast */
+}
+
+#contrast-ratio {
+    margin-top: 20px;
+    font-size: 1.8rem;
+    color: white; /* White text for better contrast */
+}
+
+.search-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Ensure it is above other elements */
+}
+
+#search-field {
+    padding: 10px;
+    font-size: 1.5rem;
+    width: 300px;
+}
+
+#search-button {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    margin-left: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+
+
+
+
+
+
+/* White screen is 138 cd/m2 227 */
+/* Dark screen is 2 cd/m2 44 */
+/* 150 150 150 is ~30 cd/m2 */
+
+/* 100 100 100 is ~13 cd/m2 */
+/* 125 125 125 is ~21 cd/m2 */
+/* White screen 240 is 102 cd */
+/* 150 150 150 is ~33 cd/m2 */
+/* 155 155 155 is ~35.5 cd/m2 */
+/* 165 165 165 is ~40-41 cd/m2 */
+/* 50 50 50 is ~1.8 cd/m2 */
+/* 30 30 30 is ~0.17 cd/m2 */
+/* 112 112 112 is ~17.5 cd/m2 */
+
+/*
+
+White text on dark screen
+white 245 on 112 = 29.9 cd average
+
+Dark text on white screen
+31 on 155 = 30.1 cd average
+
+96%
+
+Gray stimulus 146 for baseline for 50 cd
+
+Change the background and keep text color consistent at something legible
+
+*/
